@@ -5,7 +5,7 @@ const { Resend } = require("resend");
 
 const app = express();
 const resend = new Resend("re_LiGKdcFv_6PyLRF9BHq46dJECwg7aDcxJ"); // Reemplaza con API Key
-//re_UcdUR87W_5ZRdxaUffDn66WiQtLG8k1np
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -44,5 +44,5 @@ app.post("/send-email", async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 });
-
-app.listen(3000, () => console.log("Servidor corriendo en el puerto 3000"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
