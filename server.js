@@ -4,12 +4,12 @@ const bodyParser = require("body-parser");
 const { Resend } = require("resend");
 
 const app = express();
-const resend = new Resend("re_LiGKdcFv_6PyLRF9BHq46dJECwg7aDcxJ"); // Reemplaza con API Key
+const resend = new Resend("re_ZYNEP2Q3_7c8nppec4s49esse7pnkDGJb"); // Reemplaza con API Key
 
 app.use(cors());
 app.use(bodyParser.json());
 
-const DESTINATARIO_PREDETERMINADO = "matiascontent@gmail.com"; // Reemplazar con el email de destino
+const DESTINATARIO_PREDETERMINADO = "recepcionclinicasdramilasosa@gmail.com"; // Reemplazar con el email de destino
 
 app.post("/send-email", async (req, res) => {
   const { peso, altura, nombre, apellido, email, telefono } = req.body;
